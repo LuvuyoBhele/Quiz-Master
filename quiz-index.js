@@ -34,8 +34,8 @@ app.get("/", (req, res) => {
     user: 'postgres',
     host: 'localhost',
     database: 'Quiz',
-    password: '$6YFEzw',
-    port: 5432,
+    password: 'Enter Your Password',
+    port: 'Enter Your Port',
   });
 
   //connecting to DATABASE to fetch round 1 questions
@@ -127,8 +127,8 @@ app.get("/submit", (req, res) => {
     user: 'postgres',
     host: 'localhost',
     database: 'Quiz',
-    password: '$6YFEzw',
-    port: 5432,
+    password: 'Enter Your Password',
+    port: 'Enter Your Port',
   });
 
   db.connect();
@@ -173,8 +173,8 @@ app.get("/memo", (req, res) => {
     user: 'postgres',
     host: 'localhost',
     database: 'Quiz',
-    password: '$6YFEzw',
-    port: 5432,
+    password: 'Enter Your Password',
+    port: 'Enter Your Password',
   });
   console.log("current round for memo:", currentRoundIndex);
   db.connect();
@@ -201,5 +201,6 @@ app.listen(port, () =>{
 })
 
 // Timer functionality
+
 
 
