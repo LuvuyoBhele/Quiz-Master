@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,4 +46,53 @@
     <script src="/quiz-index.js"></script>
 
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="STYLES/quiz.css"/> make a note about this-->
+    <title>MEMO</title>
+</head>
+<body>
+    <h1>Memo To Round <%= round %></h1>
+
+    <ul>
+        <% memoData.forEach(item => { %>
+            <li>
+                <p>Question: <%= item.question %></p>
+                <p>
+                  Answer :
+                  <% if (item.category === 'MCQ') { %>
+                   <% console.log('MCQ detected');%>
+                    <span class="letter" answer_id="<%= item.answer %>"></span>
+                  <% } %>
+                  <%= item.answer %>
+                </p>
+            </li>
+        <% }) %>
+    </ul>
+
+    <form action="/submit" method="post" id="memo-form">
+        <button type="submit" name="control" value="NEXT" id = "next">NEXT</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+         document.addEventListener('DOMContentLoaded', function() {
+            const letterElements = document.querySelectorAll('.letter');
+            letterElements.forEach(elem => {
+                const answerId = elem.getAttribute('answer_id');
+                const storedLetter = localStorage.getItem(answerId);
+                if (storedLetter) {
+                    elem.textContent = storedLetter;
+                };
+            });
+        });
+    </script>
+    <script src="/quiz-index.js"></script>
+
+</body>
+>>>>>>> master
 </html>
