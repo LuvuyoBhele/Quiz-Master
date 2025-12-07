@@ -17,3 +17,9 @@
 #questions{
     text-align: center;
 }
+
+#options {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+}

@@ -43,7 +43,6 @@
     </form>
 
 
-    
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script>
         let questionCategory = '<%=questionsAndCategory[questionIndex].category%>';
@@ -92,11 +91,6 @@
             startTimer(); // uses category default
         });
 
-        $('#start-time-btn').click(function() {
-            startTimer(); // or startTimer(120) to force riddle
-            console.log('Timer started');
-        });
-
         document.addEventListener('DOMContentLoaded', () => {
         // safe injection from server into client
         const q = <%- JSON.stringify((questionsAndCategory && questionsAndCategory[questionIndex]) || {}) %>;
@@ -134,8 +128,16 @@
         } else if( roundNum === 9) {
             localStorage.clear();
         }
-});
+        });
+
+        $('#start-time-btn').click(function() {
+            startTimer(); // or startTimer(120) to force riddle
+            console.log('Timer started');
+        });
+
+        
     </script>
+    
 
 </body>
 </html>

@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
     user: 'postgres',
     host: 'localhost',
     database: 'Quiz',
-    password: '',
+    password: '$6YFEzw',
     port: 5432,
   });
 
@@ -127,7 +127,7 @@ app.get("/submit", (req, res) => {
     user: 'postgres',
     host: 'localhost',
     database: 'Quiz',
-    password: '',
+    password: '$6YFEzw',
     port: 5432,
   });
 
@@ -173,7 +173,7 @@ app.get("/memo", (req, res) => {
     user: 'postgres',
     host: 'localhost',
     database: 'Quiz',
-    password: '',
+    password: '$6YFEzw',
     port: 5432,
   });
   console.log("current round for memo:", currentRoundIndex);
