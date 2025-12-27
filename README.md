@@ -44,6 +44,45 @@ Quiz Master/
 ├── package.json
 ```
 
+## 🧩 Code Overview
+
+### 🔗 Application Flow
+1. **Frontend (HTML/CSS/JS/jQuery)**  
+   - Renders quiz interface with navigation, timers, and question display.  
+   - Handles user interactions (NEXT/PREV, answer selection).  
+
+2. **Backend (Node.js + Express)**  
+   - Routes requests between the frontend and database.  
+   - Manages quiz state (current round, scoring, memo generation).  
+   - Uses EJS templates to render dynamic views.  
+
+3. **Database (PostgreSQL)**  
+   - Stores questions, answers, rounds, and scoring rules.  
+   - Provides queries for validation, memo summaries, and analytics.  
+
+
+### 📂 Key Files
+- **`quiz-index.js`** → Entry point; starts the Express server and defines routes.  
+- **`views/index.ejs`** → Main quiz interface template.  
+- **`views/memo.ejs`** → Displays summary of questions and correct answers after each round.  
+- **`public/JS/app.js`** → Client-side logic (timers, navigation, answer selection).  
+- **`public/STYLES/quiz.css`** → Styling for quiz interface.  
+- **`QUIZ DB.sql`** → SQL schema and sample data (tables for questions, answers, rounds).  
+
+
+### 🗄️ Database Schema (Simplified)
+- **Questions Table** → Stores question text, type, and round association.  
+- **Answers Table** → Stores possible answers and flags the correct one.  
+- **Rounds Table** → Groups questions and defines scoring rules.  
+
+
+### ⚙️ Core Logic Highlights
+- **MCQ Shuffling**: Randomizes options while preserving correct answer mapping.  
+- **Timer**: JavaScript countdown per question, synced with navigation.  
+- **Scoring System**: Points assigned per question/round, aggregated at the end.  
+- **Memo Generation**: SQL queries + EJS rendering to show correct answers after each round.  
+
+
 ## How to Run
 
 1. **Install dependencies:**
